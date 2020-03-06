@@ -1,4 +1,5 @@
 // TODO: parameterize timeline colors, overall length, and length between points (css styles)
+// TOFIX: The new option "Default selection" doesn't work well with initializeChange: false.
 L.Control.TimeLineSlider = L.Control.extend({
 
     options: {
@@ -10,6 +11,7 @@ L.Control.TimeLineSlider = L.Control.extend({
         },
         extraChangeMapParams: {},
         initializeChange: true,
+        defaultSelection : 1,
         
         thumbHeight: "4.5px",
         labelWidth: "80px",
@@ -63,7 +65,7 @@ L.Control.TimeLineSlider = L.Control.extend({
 
         /* Create html elements for input and labels */
         this.slider = L.DomUtil.create('div', 'range', this.container);
-        this.slider.innerHTML = `<input id="rangeinputslide" type="range" min="1" max="${this.options.timelineItems.length}" steps="1" value="1"></input>`
+        this.slider.innerHTML = `<input id="rangeinputslide" type="range" min="1" max="${this.options.timelineItems.length}" steps="1" value="${this.options.defaultSelection}"></input>`
 
         this.rangeLabels = L.DomUtil.create('ul', 'range-labels', this.container);
         this.rangeLabels.innerHTML = this.options.timelineItems.map((item) => { return "<li>" + item + "</li>" }).join('');
