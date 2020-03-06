@@ -50,6 +50,7 @@ Options get passed to the timeline slider function in an options object. See tab
 | extraChangeMapParams | Object with user defined values or variables that the changeMap function uses. | {} |
 | changeMap   | Function that will execute when element of timeline is chosen. Function can access timeline value (1 through length of timeline), timeline label, or map through value, label, and map keywords. Function can also access extra user defined parameters through extraChangeMapParams.  | `function({label, value, map}) { console.log("You are not using the value or label from the timeline to change the map."); }` |
 | initializeChange   | Boolean indicating whether you want changeMap function to run when timeline is first loaded  | true |
+| defaultSelection   | Index of the default selected event  | 1 |
 | thumbHeight   | Height in pixels of moving thumb | "4.5px" |
 | labelWidth   | Width in pixels between labels on timeline | "80px" |
 | betweenLabelAndRangeSpace | Size in pixels of space between timeline and labels | "20px" |
